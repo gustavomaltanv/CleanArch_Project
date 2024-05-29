@@ -29,7 +29,7 @@ public class ProductUnitTest1
         Action action = () => new Product(1, "Pr", "Product description", 19.99M, 99, "Product image");
         action.Should()
             .Throw<CleanArchMvc.Domain.Validation.DomainExceptionValidation>()
-            .WithMessage("Invalid name, too short, minimum 3 charecters.");
+            .WithMessage("Invalid name, too short, minimum 3 characters.");
     }
 
     [Fact]
@@ -47,7 +47,7 @@ public class ProductUnitTest1
         Action action = () => new Product(1, "Product name", "Prod", 19.99M, 99, "Product image");
         action.Should()
             .Throw<CleanArchMvc.Domain.Validation.DomainExceptionValidation>()
-            .WithMessage("Invalid description, too short, minimum 5 charecters.");
+            .WithMessage("Invalid description, too short, minimum 5 characters.");
     }
 
     [Fact]
@@ -83,6 +83,6 @@ public class ProductUnitTest1
         Action action = () => new Product(1, "Product name", "Product description", 19.99M, 99, "Product imageeeeeeeeeee eeeeeeeeee eeeeeeeeee eeeeeeeeee eeeeeeeeee eeeeeeeeee eeeeeeeeee eeeeeeeeee eeeeeeeeee eeeeeeeeee eeeeeeeeee eeeeeeeeee eeeeeeeeee eeeeeeeeee eeeeeeeeee eeeeeeeeee eeeeeeeeee eeeeeeeeee eeeeeeeeee eeeeeeeeee eeeeeeeeee eeeeeeeeee ");
         action.Should()
             .Throw<CleanArchMvc.Domain.Validation.DomainExceptionValidation>()
-            .WithMessage("Invalid image name, too long, maximum 250 charecters.");
+            .WithMessage("Invalid image name, too long, maximum 250 characters.");
     }
 }
